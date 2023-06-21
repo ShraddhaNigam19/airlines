@@ -29,11 +29,14 @@ function App() {
       <Router>
         <Header user={user} />
         <Routes>
-          <Route exact path="/" element={<LandingPage />} />
-          <Route path="/signin" element={<SignInPage />} />
-          <Route path="/signup" element={<SignUpPage />} />
-          <Route path="/resetpassword" element={<ResetPasswordPage />} />
-          <Route path="/list-passenger" element={<ListPassenger />} />
+          <Route exact path="/airlines" element={<LandingPage />} />
+          <Route path="/airlines/signin" element={<SignInPage />} />
+          <Route path="/airlines/signup" element={<SignUpPage />} />
+          <Route
+            path="/airlines/resetpassword"
+            element={<ResetPasswordPage />}
+          />
+          <Route path="/airlines/list-passenger" element={<ListPassenger />} />
         </Routes>
       </Router>
     </div>

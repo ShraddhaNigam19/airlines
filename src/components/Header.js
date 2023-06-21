@@ -15,7 +15,7 @@ const Header = ({ user }) => {
     signOut()
       .then(() => {
         console.log("User logged out");
-        navigate("/");
+        navigate("/airlines");
       })
       .catch((error) => {
         console.error("Logout error:", error);
@@ -24,9 +24,9 @@ const Header = ({ user }) => {
 
   const handleLogoClick = () => {
     if (user) {
-      navigate("/list-passenger");
+      navigate("/airlines/list-passenger");
     } else {
-      navigate("/");
+      navigate("/airlines");
     }
   };
 
@@ -37,7 +37,7 @@ const Header = ({ user }) => {
           <div className="flex items-center justify-between h-16">
             <div className="flex">
               <Link
-                to={"/"}
+                to={"/airlines"}
                 className="flex-shrink-0 text-2xl font-bold text-indigo-600 cursor-pointer"
                 onClick={handleLogoClick}
               >
@@ -65,13 +65,13 @@ const Header = ({ user }) => {
                 {!user && (
                   <>
                     <Link
-                      to="/signin"
+                      to="/airlines/signin"
                       className="ml-8 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
                     >
                       Sign In
                     </Link>
                     <Link
-                      to="/signup"
+                      to="/airlines/signup"
                       className="ml-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:border-indigo-300 focus:shadow-outline-indigo active:text-indigo-700 transition duration-150 ease-in-out"
                     >
                       Sign Up
@@ -96,14 +96,14 @@ const Header = ({ user }) => {
               {!user && (
                 <>
                   <Link
-                    to="/signin"
+                    to="/airlines/signin"
                     className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                     onClick={toggleMenu}
                   >
                     Sign In
                   </Link>
                   <Link
-                    to="/signup"
+                    to="/airlines/signup"
                     className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                     onClick={toggleMenu}
                   >

@@ -18,7 +18,7 @@ const Logout = () => {
           showConfirmButton: false,
           timer: 3000,
         });
-        navigate("/");
+        navigate("/airlines");
       })
       .catch((error) => {
         console.error("Logout error:", error);

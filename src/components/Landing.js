@@ -17,9 +17,9 @@ const LandingPage = () => {
 
   const handleGetStarted = () => {
     if (user) {
-      navigate("/list-passenger");
+      navigate("/airlines/list-passenger");
     } else {
-      navigate("/");
+      navigate("/airlines");
     }
   };
 

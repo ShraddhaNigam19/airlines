@@ -18,7 +18,7 @@ const SignInPage = () => {
       .then((userCredential) => {
         const user = userCredential.user;
         console.log("User signed in:", user);
-        navigate("/list-passenger");
+        navigate("/airlines/list-passenger");
         Swal.fire({
           title: "Sign In Successful",
           text: "Welcome back!",
@@ -99,7 +99,7 @@ const SignInPage = () => {
               </button>
               <a
                 className="inline-block align-baseline font-bold text-sm text-indigo-600 hover:text-indigo-500"
-                href="/resetpassword"
+                href="/airlines/resetpassword"
               >
                 Forgot Password?
               </a>

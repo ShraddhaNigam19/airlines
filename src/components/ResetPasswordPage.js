@@ -19,7 +19,7 @@ const ResetPasswordPage = () => {
           showConfirmButton: false,
           timer: 3000,
         });
-        navigate("/");
+        navigate("/airlines");
       })
       .catch((error) => {
         console.log("Error sending password reset email:", error);
@@ -69,7 +69,7 @@ const ResetPasswordPage = () => {
             </button>
             <a
               className="inline-block align-baseline font-bold text-sm text-indigo-600 hover:text-indigo-500"
-              href="/signin"
+              href="/airlines/signin"
             >
               Sign In
             </a>

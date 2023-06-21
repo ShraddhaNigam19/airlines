@@ -30,7 +30,7 @@ const SignUpPage = () => {
         showConfirmButton: false,
         timer: 3000,
       });
-      navigate("/list-passenger");
+      navigate("/airlines/list-passenger");
     } catch (error) {
       console.error("Sign up error", error);
       Swal.fire({
@@ -133,7 +133,7 @@ const SignUpPage = () => {
               </button>
               <a
                 className="inline-block align-baseline font-bold text-sm text-indigo-600 hover:text-indigo-500"
-                href="/signin"
+                href="/airlines/signin"
               >
                 Sign In
               </a>
