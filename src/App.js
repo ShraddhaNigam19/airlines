@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import LandingPage from "./components/Landing";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SignInPage from "./components/SignInPage";
+import SignUpPage from "./components/SignUpPage";
+import ResetPasswordPage from "./components/ResetPasswordPage";
+import ListPassenger from "./components/ListPassenger";
+import Logout from "./components/Logout";
+import Header from "./components/Header";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { app } from "./components/firebase";
+import { useState } from "react";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  // Check if user is authenticated on app load
+  const auth = getAuth(app);
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      setUser(user);
+    } else {
+      setUser(null);
+    }
+  });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Header user={user} />
+        <Routes>
+          <Route exact path="/" element={<LandingPage />} />
+          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/resetpassword" element={<ResetPasswordPage />} />
+          <Route path="/list-passenger" element={<ListPassenger />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
