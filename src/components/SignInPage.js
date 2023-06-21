@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from "./firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const auth = getAuth(app);
@@ -28,7 +28,6 @@ const SignInPage = () => {
         });
       })
       .catch((error) => {
-        // Handle sign-in errors
         setError(error.message);
         Swal.fire({
           title: "Sign In Error",
@@ -97,12 +96,12 @@ const SignInPage = () => {
               >
                 Sign In
               </button>
-              <a
+              <Link
+                to="/airlines/resetpassword"
                 className="inline-block align-baseline font-bold text-sm text-indigo-600 hover:text-indigo-500"
-                href="/airlines/resetpassword"
               >
                 Forgot Password?
-              </a>
+              </Link>
             </div>
           </form>
           <p className="text-center text-gray-500 text-xs">

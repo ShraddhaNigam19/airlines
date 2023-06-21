@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -131,12 +131,12 @@ const SignUpPage = () => {
               >
                 Sign Up
               </button>
-              <a
+              <Link
+                to="/airlines/signin"
                 className="inline-block align-baseline font-bold text-sm text-indigo-600 hover:text-indigo-500"
-                href="/airlines/signin"
               >
                 Sign In
-              </a>
+              </Link>
             </div>
           </form>
           <p className="text-center text-gray-500 text-xs">
